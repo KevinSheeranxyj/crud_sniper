@@ -19,8 +19,15 @@ contract SimpleToken is ERC20PresetMinterPauser {
     constructor(
         string memory name,
         string memory symbol,
-        uint8 
-    )
+        uint8 decimals_,
+        uint256 init_supply
+    ) ERC20PresetMinterPauser(name, symbol) {
+       _decimals = decimals_;
+       INITIAL_SUPPLY = init_supply * (10**uint256(decimals_));
+       _mint(msg.sender, INITIAL_SUPPLY);
+    }
+
+
 
 
 

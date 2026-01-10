@@ -1,4 +1,9 @@
+class ContractInteractor {
+  async transfer() {}
 
+  async balanceOf() {}
 
+  async totalSupply() {}
+}
 
-exports.default = 
+module.exports = ContractInteractor;
